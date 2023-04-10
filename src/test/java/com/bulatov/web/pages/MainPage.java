@@ -1,12 +1,23 @@
 package com.bulatov.web.pages;
 
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.bulatov.web.tests.WebTestData.*;
+import static com.bulatov.web.tests.WebTestData.titleMainText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
+
+    private SelenideElement
+            titleMain = $(".title_main"),
+            headerSignIn = $(".header_sign_in");
+
+    private ElementsCollection
+            headerMenuLink = $$(".header__menu_link");
 
 
     @Step("Открываем главную страницу сайта https://best2pay.net/")
@@ -18,7 +29,7 @@ public class MainPage {
 
     @Step("Проверяем загрузку  главной страницы")
     public MainPage verificationMainPage() {
-        $(".title_main").shouldHave(text("Платежи во всех измерениях"));
+        titleMain.shouldHave(text(titleMainText));
 
         return this;
     }
@@ -26,17 +37,17 @@ public class MainPage {
     @Step("Проверяем наличие в header_menu кнопок 'Банкам и МФО', 'Бизнесу', " +
             "'Агрегаторам (BAAS)', 'Поддержка'")
     public MainPage verificationHeaderMainPage() {
-        $$(".header__menu_link").get(0).shouldHave(text("Банкам и МФО"));
-        $$(".header__menu_link").get(1).shouldHave(text("Бизнесу"));
-        $$(".header__menu_link").get(2).shouldHave(text("Агрегаторам (BAAS)"));
-        $$(".header__menu_link").get(3).shouldHave(text("Поддержка"));
+        headerMenuLink.get(0).shouldHave(text(headerMenuLinkFirstText));
+        headerMenuLink.get(1).shouldHave(text(headerMenuLinkSecondText));
+        headerMenuLink.get(2).shouldHave(text(headerMenuLinkThirdText));
+        headerMenuLink.get(3).shouldHave(text(headerMenuLinkFourthText));
 
         return this;
     }
 
     @Step("Кликаем по кнопке 'Войти' в header на главной странице")
     public MainPage clickToButtonEnter() {
-        $(".header_sign_in").click();
+        headerSignIn.click();
 
         return this;
     }
