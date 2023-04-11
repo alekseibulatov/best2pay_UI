@@ -1,6 +1,6 @@
 ## Проект по автоматизации тестирования (Web UI)
 <a name="Ссылка"></a>
-### Веб сайт <a target="_blank" https://best2pay.net/">best2pay.net</a>
+### Веб сайт <a target="_blank" href="https://best2pay.net/">best2pay.net</a>
 
 <p align="center">
 <img title="Сайт todoist.com" src="images/screen/best2pay.png">
