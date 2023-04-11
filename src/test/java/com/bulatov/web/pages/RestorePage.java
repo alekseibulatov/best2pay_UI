@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RestorePage {
 
-    private SelenideElement contentRestore = $(".content");
+    private final SelenideElement contentRestore = $(".content");
 
     @Step("Проверяем, что на странице отображается надпись 'Добро пожаловать в личный кабинет'")
     public RestorePage displayOnRestorePageTitle() {

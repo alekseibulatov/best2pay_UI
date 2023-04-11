@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
 
-    private SelenideElement
+    private final SelenideElement
             content = $(".content"),
             loginField = $(".form-control[name=login]"),
             passwordField = $(".form-control[name=password]"),

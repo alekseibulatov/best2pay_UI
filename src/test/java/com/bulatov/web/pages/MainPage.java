@@ -12,11 +12,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
-    private SelenideElement
+    private final SelenideElement
             titleMain = $(".title_main"),
             headerSignIn = $(".header_sign_in");
 
-    private ElementsCollection
+    private final ElementsCollection
             headerMenuLink = $$(".header__menu_link");
 
 
